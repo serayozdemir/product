@@ -6,10 +6,14 @@ export default function Home() {
   const[ selectedProduct , setSelectedProduct] = useState(null);
 
   useEffect(() => {
-  fetch('https://dummyjson.com/products')
-    .then(cevap => cevap.json()) // Gelen paketi aç (JSON'a çevir)
-    .then(veri => setProducts(veri.products)); // Gelen ürünleri listeye kaydet
-}, []); // Köşeli parantez boş, yani sadece sayfa ilk açıldığında yap.
+    fetch('https://dummyjson.com/products')
+      .then(cevap => {
+        if (!cevap.ok) throw new Error('Fetch başarısız: ' + cevap.status);
+        return cevap.json();
+      })
+      .then(veri => setProducts(veri.products))
+      .catch(err => console.error('Hata:', err));
+  }, []);
 
 
   return (
