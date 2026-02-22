@@ -1,0 +1,105 @@
+@import "../base/base";
+
+.home-container{
+    
+    h2{
+        text-align: center;
+        margin-top: 40px;
+        padding: 12px;
+        box-shadow: var(--blue-shadow);
+        width: fit-content;
+        margin-inline: auto;
+        border-radius: 30px;
+        background: var(--h2background);
+        
+    }
+
+    .cards{
+        margin: 20px;
+        padding: 10px;
+        
+    
+        .card{
+            background: var(--primary-pink);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            margin: 20px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+
+
+            button{
+                background: var(--button);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 7px;
+                
+
+                &:hover{
+                    background: var(--button-hover);
+                    transition: box-shadow 0.3s ease-in-out;
+                }
+
+            }
+        
+        }
+
+    }
+
+
+
+    .popup-overlay {
+        position: fixed; /* Ekranın üstünde sabit dur */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Tam ekran genişlik */
+        height: 100vh; /* Tam ekran yükseklik */
+        background: rgba(0, 0, 0, 0.5); /* Karartma efekti */
+        display: flex; /* İçeriği ortala */
+        justify-content: center; /* Yatayda ortala */
+        align-items: center; /* Dikeyde ortala */
+        z-index: 1000; /* En üstte olsun */
+
+        .popup-content {
+            background: var(--background);
+            border-radius: 30px;
+            padding: 30px;
+            max-width: 600px; /* Maksimum genişlik */
+            max-height: 80vh; /* Ekranın %80'i kadar yüksek */
+            overflow-y: auto; /* İçerik taşarsa scroll */
+            position: relative; /* Close butonu için */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Gölge efekti */
+
+            h2{
+                
+                border-radius: 10px;
+                padding: 5px;
+                margin-top: 5px;
+                margin-bottom: 20px;
+                text-align: center;
+                color: var(--h2color);
+            }
+
+            p{
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .popup-close {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                background: transparent;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                color: var(--popup-close);
+            }
+
+        }
+    }
+}
+
