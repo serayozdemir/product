@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <h2>Products</h2>
+      <h2 className="title">Products</h2>
       <div className="cards">
         {products.map(product => (
           <div className="card" key={product.id}>
